@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Cabinet Kiné Garonne — Site vitrine
 
-## Getting Started
+Site vitrine **one-page** fictif pour un cabinet de kinésithérapie à Toulouse.
+Démo portfolio. 100 % statique, aucun backend.
 
-First, run the development server:
+## Stack
+
+- **Next.js 16** (App Router, TypeScript strict)
+- **Tailwind CSS v4** (config via `@theme` dans `app/globals.css`)
+- **Framer Motion** (animations au scroll, compteurs, hover)
+- **lucide-react** (icônes SVG)
+- Polices via `next/font` : **Poppins** (titres) + **Inter** (corps)
+
+## Lancer
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000 (ou 3001 si 3000 occupé)
+npm run build    # build production
+npm start        # servir le build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Où modifier le contenu
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Tout le contenu éditorial est centralisé et typé dans **`lib/data.ts`** :
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Constante      | Contenu                                            |
+| -------------- | -------------------------------------------------- |
+| `cabinet`      | Nom, adresse, tél, horaires, lien Doctolib         |
+| `navLinks`     | Liens d'ancre du header                            |
+| `soins`        | Les 6 prestations (icône + titre + description)    |
+| `pointsForts`  | Checklist section « À propos »                      |
+| `stats`        | Les 4 compteurs animés                             |
+| `equipe`       | Les praticiens (nom, spécialité, bio, photo)       |
+| `avis`         | Les témoignages patients                           |
 
-## Learn More
+Les images praticiens/hero pointent vers Unsplash (placeholders).
+Domaine autorisé dans `next.config.ts` (`images.remotePatterns`).
 
-To learn more about Next.js, take a look at the following resources:
+## Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+app/
+  layout.tsx        # fonts, metadata SEO + Open Graph, lang="fr"
+  page.tsx          # assemble les sections + skip-link a11y
+  globals.css       # theme Tailwind v4, couleurs, smooth scroll, reduced-motion
+components/
+  motion.tsx        # helpers Framer Motion (Reveal, variants partages)
+  Header.tsx        # sticky transparent->blanc au scroll, burger mobile
+  Hero.tsx          # titre, CTA, visuel, badge avis
+  Confiance.tsx     # bandeau mentions
+  Soins.tsx         # grille 6 prestations
+  Apropos.tsx       # approche + checklist
+  Stats.tsx         # 4 compteurs animes
+  Equipe.tsx        # 3 praticiens
+  Avis.tsx          # 3 temoignages
+  Contact.tsx       # coordonnees + Google Maps embed
+  CtaFinal.tsx      # bandeau teal pleine largeur
+  Footer.tsx        # coordonnees, liens, legal
+lib/
+  data.ts           # toutes les donnees du site
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Notes design
 
-## Deploy on Vercel
+Palette douce médicale : teal `#0E7C7B`, accent `#90D4CE`, fond `#F4FAF9`,
+texte `#1A2E2D`. Cards `rounded-2xl`, ombres douces, espace blanc généreux.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Accessibilité : balises sémantiques, `alt` sur images, focus visible,
+`prefers-reduced-motion` respecté, skip-link clavier, contrastes AA.
