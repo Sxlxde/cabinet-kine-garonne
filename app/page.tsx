@@ -7,8 +7,8 @@ import Stats from "@/components/Stats";
 import Equipe from "@/components/Equipe";
 import Avis from "@/components/Avis";
 import Contact from "@/components/Contact";
-import CtaFinal from "@/components/CtaFinal";
 import Footer from "@/components/Footer";
+import CookieBanner from "@/components/CookieBanner";
 
 export default function Home() {
   return (
@@ -29,9 +29,9 @@ export default function Home() {
         <Equipe />
         <Avis />
         <Contact />
-        <CtaFinal />
       </main>
       <Footer />
+      <CookieBanner />
     </>
   );
 }

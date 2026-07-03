@@ -14,7 +14,7 @@ export default function Hero() {
       {/* Formes organiques décoratives */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-teal-light/30 blur-3xl"
+        className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-teal-light/25 blur-3xl"
       />
       <div
         aria-hidden="true"
@@ -28,12 +28,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          <span className="inline-flex items-center gap-2 rounded-full bg-teal/10 px-4 py-1.5 text-sm font-medium text-teal">
-            <span className="h-2 w-2 rounded-full bg-teal" aria-hidden="true" />
-            {cabinet.sousTitre}
-          </span>
-
-          <h1 className="mt-5 font-display text-4xl font-extrabold leading-tight text-ink sm:text-5xl lg:text-6xl">
+          <h1 className="font-display text-4xl font-extrabold leading-tight text-ink sm:text-5xl lg:text-6xl">
             Retrouvez le mouvement,{" "}
             <span className="text-teal">sans douleur</span>
           </h1>
@@ -43,7 +38,7 @@ export default function Hero() {
             écoute pour une rééducation sur-mesure, dans un cadre apaisant.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-4">
+          <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
               href={cabinet.doctolib}
               target="_blank"
@@ -51,7 +46,7 @@ export default function Hero() {
               className="inline-flex items-center gap-2 rounded-full bg-teal px-6 py-3.5 text-base font-semibold text-white shadow-soft transition-transform hover:scale-105"
             >
               <CalendarCheck size={20} aria-hidden="true" />
-              Prendre RDV
+              Prendre rendez-vous
             </a>
             <a
               href="#soins"
@@ -74,7 +69,7 @@ export default function Hero() {
               ))}
             </div>
             <p className="text-sm font-medium text-ink-soft">
-              <span className="font-bold text-ink">4,9/5</span> · plus de 800
+              <span className="font-bold text-ink">4,9/5</span>, plus de 800
               avis patients
             </p>
           </div>
@@ -89,21 +84,13 @@ export default function Hero() {
         >
           <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-soft">
             <Image
-              src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=900&h=1100&fit=crop&auto=format"
-              alt="Séance de kinésithérapie au cabinet"
+              src="/hero-kine.jpg"
+              alt="Kinésithérapeute réalisant un massage thérapeutique sur un patient au cabinet"
               fill
               priority
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"
             />
-          </div>
-
-          {/* Carte flottante */}
-          <div className="absolute -bottom-5 -left-5 hidden rounded-2xl bg-white p-4 shadow-card sm:block">
-            <p className="text-2xl font-extrabold text-teal">15 ans</p>
-            <p className="text-xs font-medium text-ink-soft">
-              au service des patients
-            </p>
           </div>
         </motion.div>
       </div>

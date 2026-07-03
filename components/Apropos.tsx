@@ -10,8 +10,8 @@ export default function Apropos() {
         <Reveal className="relative">
           <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-soft">
             <Image
-              src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=900&h=720&fit=crop&auto=format"
-              alt="Espace de soin du Cabinet Kiné Garonne"
+              src="/approche-soin.jpg"
+              alt="Mains d'un soignant accompagnant un patient, approche humaine du cabinet"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"

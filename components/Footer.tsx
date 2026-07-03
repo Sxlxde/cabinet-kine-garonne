@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { MapPin, Phone, Clock, Globe, Mail, MessageCircle } from "lucide-react";
 import { cabinet, navLinks } from "@/lib/data";
 
@@ -13,9 +14,18 @@ export default function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 sm:grid-cols-2 lg:grid-cols-4">
         {/* Marque */}
         <div>
-          <p className="font-display text-lg font-bold text-white">
-            Cabinet Kiné <span className="text-teal-light">Garonne</span>
-          </p>
+          <div className="flex items-center gap-2.5">
+            <Image
+              src="/logo-kg.png"
+              alt="Cabinet Kiné Garonne"
+              width={44}
+              height={44}
+              className="h-10 w-10 object-contain"
+            />
+            <p className="font-display text-lg font-bold text-white">
+              Cabinet Kiné <span className="text-teal-light">Garonne</span>
+            </p>
+          </div>
           <p className="mt-3 text-sm leading-relaxed">{cabinet.sousTitre}</p>
           <div className="mt-4 flex gap-3">
             {socials.map(({ icon: Icon, label, href }) => (
@@ -90,7 +100,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10 py-6 text-center text-xs text-cream/60">
-        © {new Date().getFullYear()} {cabinet.nom} · Site vitrine fictif —
+        © {new Date().getFullYear()} {cabinet.nom}. Site vitrine fictif,
         démonstration portfolio.
       </div>
     </footer>

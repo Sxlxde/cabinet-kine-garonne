@@ -11,11 +11,11 @@ import {
 /* ── Infos cabinet ─────────────────────────────────────────── */
 export const cabinet = {
   nom: "Cabinet Kiné Garonne",
-  sousTitre: "Masseurs-Kinésithérapeutes — Toulouse",
+  sousTitre: "Masseurs-Kinésithérapeutes à Toulouse",
   adresse: "12 allée des Tilleuls, 31000 Toulouse",
   tel: "05 61 00 00 00",
   telHref: "tel:+33561000000",
-  horaires: "Lun–Ven 8h–19h · Fermé le week-end",
+  horaires: "Lun au Ven, 8h à 19h (fermé le week-end)",
   doctolib: "https://www.doctolib.fr/",
 } as const;
 
@@ -111,22 +111,19 @@ export const equipe: Praticien[] = [
     nom: "Camille Laurent",
     specialite: "Kiné du sport & rééducation",
     bio: "Diplômée d'État, 12 ans d'expérience auprès de sportifs amateurs et professionnels.",
-    photo:
-      "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&fit=crop&auto=format",
+    photo: "/equipe-camille.jpg",
   },
   {
     nom: "Thomas Mercier",
     specialite: "Rééducation & traumatologie",
     bio: "Spécialiste de la récupération post-opératoire et du suivi des pathologies chroniques.",
-    photo:
-      "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop&auto=format",
+    photo: "/equipe-thomas.jpg",
   },
   {
     nom: "Sophie Nguyen",
     specialite: "Kiné respiratoire & drainage",
     bio: "Experte en kinésithérapie respiratoire pédiatrique et drainage lymphatique manuel.",
-    photo:
-      "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=400&fit=crop&auto=format",
+    photo: "/equipe-sophie.jpg",
   },
 ];
 
@@ -141,20 +138,38 @@ export const avis: Avis[] = [
   {
     note: 5,
     citation:
-      "Suivi exemplaire après mon opération du genou. J'ai retrouvé toute ma mobilité plus vite que prévu.",
+      "Rééducation de l'épaule après une capsulite. Camille a été patiente et précise, j'ai récupéré toute l'amplitude en trois mois.",
     nom: "Julien M.",
   },
   {
     note: 5,
     citation:
-      "Équipe à l'écoute et très professionnelle. Le cabinet est moderne, propre et apaisant.",
-    nom: "Émilie R.",
+      "Je cours en semi-marathon et je venais pour une tendinite. Bilan sérieux, exercices adaptés, et surtout des conseils pour éviter la récidive.",
+    nom: "Nadia B.",
   },
   {
     note: 5,
     citation:
-      "Excellente prise en charge de ma kiné respiratoire pour mon fils. Je recommande vivement.",
-    nom: "Sarah B.",
+      "Bloqué par une lombalgie depuis des mois, je pouvais à peine me baisser. Après le suivi ici, je revis au quotidien.",
+    nom: "Thomas D.",
+  },
+  {
+    note: 5,
+    citation:
+      "Séances de kiné respiratoire pour mon fils de 4 ans. L'équipe sait mettre les enfants en confiance, mon petit y allait sans pleurer.",
+    nom: "Sophie L.",
+  },
+  {
+    note: 5,
+    citation:
+      "Suites d'une prothèse de hanche. Prise en charge rassurante et progressive, je remarche sans canne bien plus tôt que prévu.",
+    nom: "Marie-Claire V.",
+  },
+  {
+    note: 4,
+    citation:
+      "J'accompagne ma mère de 82 ans pour sa rééducation à l'équilibre. Beaucoup de douceur et de pédagogie, elle attend ses rendez-vous.",
+    nom: "Antoine R.",
   },
 ];
 

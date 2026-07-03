@@ -1,3 +1,5 @@
+"use client";
+
 import { MapPin, Phone, Clock, CalendarCheck } from "lucide-react";
 import { Reveal } from "@/components/motion";
 import { cabinet } from "@/lib/data";
@@ -54,16 +56,6 @@ export default function Contact() {
                 <p className="mt-1 text-ink-soft">{cabinet.horaires}</p>
               </div>
             </div>
-
-            <a
-              href={cabinet.doctolib}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-teal px-6 py-3.5 text-base font-semibold text-white shadow-soft transition-transform hover:scale-105"
-            >
-              <CalendarCheck size={20} aria-hidden="true" />
-              Prendre rendez-vous
-            </a>
           </Reveal>
 
           {/* Carte */}
@@ -77,6 +69,28 @@ export default function Contact() {
             />
           </Reveal>
         </div>
+
+        {/* Appel à l'action unique et fort */}
+        <Reveal className="mt-10">
+          <div className="flex flex-col items-center gap-6 rounded-[1.75rem] bg-teal-dark px-6 py-12 text-center md:px-12">
+            <h3 className="font-display text-2xl font-bold text-white sm:text-3xl">
+              Prêt à retrouver le mouvement ?
+            </h3>
+            <p className="max-w-xl text-teal-light">
+              Prenez rendez-vous en quelques clics. Notre équipe vous accueille
+              du lundi au vendredi, dans un cadre apaisant.
+            </p>
+            <a
+              href={cabinet.doctolib}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-lg font-semibold text-teal shadow-soft transition-transform hover:scale-105"
+            >
+              <CalendarCheck size={22} aria-hidden="true" />
+              Prendre rendez-vous
+            </a>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
